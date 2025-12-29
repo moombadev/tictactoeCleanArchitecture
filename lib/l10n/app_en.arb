@@ -1,0 +1,24 @@
+{
+  "@@locale": "en",
+  "start": "Start",
+  "whoStarts": "Who Starts?",
+  "turnOf": "TURN OF",
+  "playerX": "PLAYER X",
+  "playerO": "PLAYER O",
+  "victory": "VICTORY !",
+  "xWins": "X Wins",
+  "oWins": "O Wins",
+  "draw": "DRAW !",
+  "error": "Error: {error}",
+  "@error": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "cellAlreadyOccupied": "Cell already occupied",
+  "gameNotInProgress": "Game is not in progress",
+  "restart": "Restart"
+}
+

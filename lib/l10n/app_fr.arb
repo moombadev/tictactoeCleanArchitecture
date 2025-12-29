@@ -1,0 +1,24 @@
+{
+  "@@locale": "fr",
+  "start": "Commencer",
+  "whoStarts": "Qui commence ?",
+  "turnOf": "AU TOUR DE",
+  "playerX": "JOUEUR X",
+  "playerO": "JOUEUR O",
+  "victory": "VICTOIRE !",
+  "xWins": "Des X",
+  "oWins": "Des O",
+  "draw": "MATCH NUL !",
+  "error": "Erreur: {error}",
+  "@error": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "cellAlreadyOccupied": "Case déjà occupée",
+  "gameNotInProgress": "La partie n'est pas en cours",
+  "restart": "Recommencer"
+}
+
