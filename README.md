@@ -2,6 +2,10 @@
 
 Un jeu de Tic Tac Toe moderne et élégant développé avec Flutter
 
+
+https://github.com/user-attachments/assets/bedde1fa-a426-4f19-a67f-1a136bbc0c48
+
+
 ## 📋 Table des matières
 
 - [À propos](#-à-propos)
@@ -219,13 +223,6 @@ Les contributions sont les bienvenues ! Pour contribuer :
 3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
 4. Push vers la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrez une Pull Request
-
-### Standards de code
-
-- Suivre les conventions Dart/Flutter
-- Utiliser Clean Architecture
-- Écrire des tests pour les nouvelles fonctionnalités
-- Documenter le code complexe
 
 
 
