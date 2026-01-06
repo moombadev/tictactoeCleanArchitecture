@@ -11,7 +11,7 @@ class AudioServiceImpl implements AudioService {
       await _audioPlayer.stop();
       await _audioPlayer.play(AssetSource(soundPath));
     } catch (e) {
-      debugPrint('Erreur lors de la lecture du son $soundPath: $e');
+      debugPrint('Error playing sound $soundPath: $e');
     }
   }
 
@@ -22,7 +22,6 @@ class AudioServiceImpl implements AudioService {
 
   @override
   Future<void> playMoveSound(Player player) async {
-    debugPrint('Playing move sound for player: $player');
     final soundPath = switch (player) {
       PlayerX() => 'sounds/x_play.wav',
       PlayerO() => 'sounds/o_play.wav',

@@ -6,6 +6,7 @@ import '../../domain/entities/game_mode.dart';
 import '../../domain/entities/game_state.dart';
 import '../../domain/entities/player.dart';
 import '../../domain/entities/position.dart';
+import '../../domain/exceptions/invalid_move_exception.dart';
 import '../../domain/use_cases/play_move_use_case.dart';
 import '../../domain/use_cases/load_game_use_case.dart';
 import '../../domain/repositories/game_repository.dart';
@@ -68,12 +69,18 @@ class GameController extends _$GameController {
       return;
     }
 
-    state = await AsyncValue.guard(() => 
-      ref.read(playMoveUseCaseProvider).execute(
+    try {
+      final newGame = await ref.read(playMoveUseCaseProvider).execute(
         game: currentGame,
         position: position,
-      )
-    );
+      );
+      state = AsyncData(newGame);
+    } on InvalidMoveException {
+      // Erreur métier : ne pas mettre le state en erreur
+      // La grille reste visible, seul le son d'erreur est joué
+      ref.read(audioServiceProvider).playErrorSound();
+      // Le state reste avec currentGame, pas de changement
+    }
   }
 
   Future<void> resetGame({Player? startingPlayer}) async {

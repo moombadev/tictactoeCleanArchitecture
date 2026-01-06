@@ -16,14 +16,14 @@ GoRouter router(Ref ref) {
     routes: [
       GoRoute(
         path: AppRoutes.home,
-        pageBuilder: (context, state) => slideToTopPage(
+        pageBuilder: (context, state) => slideOutToTop(
           key: state.pageKey,
           child: const HomePage(),
         ),
       ),
       GoRoute(
         path: AppRoutes.chooseSide,
-        pageBuilder: (context, state) => slideFromBottomPushTopOut(
+        pageBuilder: (context, state) => slideInFromBottom(
           key: state.pageKey,
           child: const ChooseSidePage(),
         ),
@@ -32,18 +32,9 @@ GoRouter router(Ref ref) {
         path: AppRoutes.game,
         pageBuilder: (context, state) {
           final playerString = state.uri.queryParameters['player'] ?? 'x';
-          // Validation du paramètre
-          final playerValue = playerString.toLowerCase();
-          if (playerValue != 'x' && playerValue != 'o') {
-            // Redirection vers home si paramètre invalide
-            return slideToTopPage(
-              key: state.pageKey,
-              child: const HomePage(),
-            );
-          }
-          return slideFromBottomPushTopOut(
+          return slideInFromBottom(
             key: state.pageKey,
-            child: BoardGamePage(startingPlayer: playerValue),
+            child: BoardGamePage(startingPlayer: playerString),
           );
         },
       ),

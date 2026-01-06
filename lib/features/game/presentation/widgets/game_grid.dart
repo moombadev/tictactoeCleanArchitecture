@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/ui/design_system/theme/app_colors.dart';
-import '../../../../core/utils/error_translator.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../providers/game_provider.dart';
 import 'game_cell.dart';
@@ -52,7 +51,7 @@ class GameGrid extends ConsumerWidget {
       error: (err, stack) => AspectRatio(
         aspectRatio: 1,
         child: Center(
-          child: Text(AppLocalizations.of(context)!.error(err.translateError(context))),
+          child: Text(AppLocalizations.of(context)!.error('Unknown error')),
         ),
       ),
     );

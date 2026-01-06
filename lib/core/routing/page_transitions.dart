@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-CustomTransitionPage slideFromBottomPushTopOut({
+CustomTransitionPage slideInFromBottom({
   required LocalKey key,
   required Widget child,
   Duration transitionDuration = const Duration(milliseconds: 1500),
@@ -48,7 +48,7 @@ CustomTransitionPage slideFromBottomPushTopOut({
 }
 
 
-CustomTransitionPage slideToTopPage({
+CustomTransitionPage slideOutToTop({
   required LocalKey key,
   required Widget child,
   Duration transitionDuration = const Duration(milliseconds: 1500),
