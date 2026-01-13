@@ -76,10 +76,7 @@ class GameController extends _$GameController {
       );
       state = AsyncData(newGame);
     } on InvalidMoveException {
-      // Erreur métier : ne pas mettre le state en erreur
-      // La grille reste visible, seul le son d'erreur est joué
       ref.read(audioServiceProvider).playErrorSound();
-      // Le state reste avec currentGame, pas de changement
     }
   }
 
